@@ -27,7 +27,7 @@ jobs:
             gettext \
             cython3 \
             libglib2.0-dev \
-            python3-dev \
+            python3-all-dev \
             python-gi-dev \
             libbluetooth-dev \
             libpolkit-agent-1-dev \
