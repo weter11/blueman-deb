@@ -31,7 +31,6 @@ jobs:
             python-gi-dev \
             libbluetooth-dev \
             libpolkit-agent-1-dev \
-            intltool \
             pkg-config
 
       - name: Build Debian Package
