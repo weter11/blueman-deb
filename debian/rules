@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export CYTHONEXEC=cython3
+
+%:
+	dh $@ --with python3
+
+override_dh_autoreconf:
+	./autogen.sh
+
+override_dh_auto_configure:
+	dh_auto_configure -- --disable-schemas-compile
