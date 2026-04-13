@@ -1,0 +1,49 @@
+name: Build Debian Package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            debhelper \
+            dh-python \
+            devscripts \
+            build-essential \
+            automake \
+            autoconf \
+            libtool \
+            autopoint \
+            gettext \
+            cython3 \
+            libglib2.0-dev \
+            python3-all-dev \
+            python-gi-dev \
+            libbluetooth-dev \
+            libpolkit-agent-1-dev \
+            pkg-config
+
+      - name: Build Debian Package
+        run: |
+          dpkg-buildpackage -us -uc -b
+
+      - name: Prepare Artifacts
+        run: |
+          mkdir artifacts
+          mv ../*.deb ../*.changes ../*.buildinfo artifacts/
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: debian-packages
+          path: artifacts/

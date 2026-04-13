@@ -36,7 +36,7 @@ AC_ENABLE_STATIC(no)
 
 AM_PATH_PYTHON([3.10])
 
-PKG_CHECK_MODULES([PYTHON], [python-${PYTHON_VERSION}])
+PKG_CHECK_MODULES([PYTHON], [python3 >= 3.10])
 AC_SUBST(PYTHON_LIBS)
 AC_SUBST(PYTHON_CFLAGS)
 AC_SUBST(PYTHON)
@@ -199,7 +199,7 @@ AM_CONDITIONAL([HAVE_SETTINGS], [test "x$have_settings" = "xyes"])
 
 dnl ----------------------------
 
-PKG_CHECK_MODULES([BLUEZ], [bluez >= 5.0 gthread-2.0 >= 2.32])
+PKG_CHECK_MODULES([BLUEZ], [bluez >= 5.72 gthread-2.0 >= 2.32])
 
 AC_SUBST([BLUEZ_CFLAGS])
 AC_SUBST([BLUEZ_LIBS])

@@ -1,0 +1,5 @@
+blueman (2.4.3-1) noble; urgency=low
+
+  * Initial release for Ubuntu 24.04 Actions
+
+ -- Christopher Schramm <christopher@schramm.it>  Mon, 01 Jan 2024 00:00:00 +0000

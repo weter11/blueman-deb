@@ -57,7 +57,7 @@ conf_data.set('PYTHON', pyinstall.full_path())
 # Check for build dependencies
 pythonlib = pyinstall.dependency()
 pygobject = dependency('pygobject-3.0', required: true)
-bluez = dependency('bluez', version: '>= 5.0', required: true)
+bluez = dependency('bluez', version: '>= 5.72', required: true)
 gthread = dependency('gthread-2.0', version: '>= 2.32', required: true)
 
 

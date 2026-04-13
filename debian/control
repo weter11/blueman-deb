@@ -1,0 +1,45 @@
+Source: blueman
+Section: x11
+Priority: optional
+Maintainer: Christopher Schramm <christopher@schramm.it>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               automake,
+               autoconf,
+               libtool,
+               autopoint,
+               gettext,
+               cython3,
+               libglib2.0-dev,
+               python3-all-dev,
+               python-gi-dev,
+               libbluetooth-dev,
+               libpolkit-agent-1-dev,
+               pkg-config
+X-Python3-Version: >= 3.10
+Standards-Version: 4.6.2
+Homepage: https://github.com/blueman-project/blueman
+Rules-Requires-Root: no
+
+Package: blueman
+Architecture: any
+Depends: ${python3:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends},
+         python3:any,
+         bluez (>= 5.72),
+         dbus (>= 1.9.18),
+         python3-gi,
+         python3-gi-cairo,
+         python3-cairo,
+         gir1.2-gtk-3.0 (>= 3.24),
+         gir1.2-glib-2.0 (>= 2.32),
+         gir1.2-pango-1.0,
+         gir1.2-gdkpixbuf-2.0,
+         gir1.2-nm-1.0,
+         gir1.2-notify-0.7,
+         iproute2 | net-tools
+Description: Graphical bluetooth manager
+ Blueman is a GTK+ bluetooth management utility for GNOME using bluez D-Bus backend.
+ It is designed to provide a simple yet effective means for controlling the BlueZ
+ API and simplifying bluetooth tasks.
