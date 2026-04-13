@@ -26,7 +26,7 @@ Architecture: any
 Depends: ${python3:Depends},
          ${shlibs:Depends},
          ${misc:Depends},
-         bluez (>= 5.48),
+         bluez (>= 5.72),
          dbus (>= 1.9.18),
          python3-gi,
          python3-cairo,
