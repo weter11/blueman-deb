@@ -38,8 +38,13 @@ jobs:
         run: |
           dpkg-buildpackage -us -uc -b
 
+      - name: Prepare Artifacts
+        run: |
+          mkdir artifacts
+          mv ../*.deb ../*.changes ../*.buildinfo artifacts/
+
       - name: Upload Artifacts
         uses: actions/upload-artifact@v6
         with:
           name: debian-packages
-          path: ../*.deb
+          path: artifacts/
